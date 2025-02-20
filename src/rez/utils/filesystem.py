@@ -519,7 +519,7 @@ def canonical_path(path, platform=None):
     if platform is None:
         platform = platform_
 
-    path = os.path.normpath(os.path.realpath(path))
+    path = os.path.normpath(os.path.abspath(path))
 
     if not platform.has_case_sensitive_filesystem:
         return path.lower()
